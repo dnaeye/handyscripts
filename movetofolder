@@ -1,0 +1,28 @@
+# move all files to specific folders based on matching last four characters in filename
+for i in Staff_*.csv; do
+	filename=$(basename "$i")
+	filename="${filename%.*}"
+	id=${filename:(-4)}
+	mv $i $id
+done
+
+for i in StaffCredential_*.csv; do
+	filename=$(basename "$i")
+	filename="${filename%.*}"
+	id=${filename:(-4)}
+	mv $i $id
+done
+
+for i in StaffRole_*.csv; do
+	filename=$(basename "$i")
+	filename="${filename%.*}"
+	id=${filename:(-4)}
+	mv $i $id
+done
+
+for i in StudentSectionEnrollment_*.csv; do
+	filename=$(basename "$i")
+	filename="${filename%.*}"
+	id=${filename:(-4)}
+	mv $i $id
+done
